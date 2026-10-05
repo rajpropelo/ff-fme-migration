@@ -31,7 +31,7 @@ async function loadRuleBasedSegments(filterProject, limit = 50, offset = 0) {
   const directoriesWithFlagDef = [
     ...new Set(
       getDirectoriesWithFlagDef("./transformedData").map((dir) =>
-        dir.split('/').slice(0, 5).join('/')
+        dir.split(/[/\\]/).slice(0, 5).join('/')
       )
     ),
   ].map((dir) => [dir.split('/')[0], dir.split('/')[1], dir.split('/')[2], dir.split('/')[3], dir.split('/')[4]])

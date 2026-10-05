@@ -7,9 +7,13 @@ function transformProjects(filterProject) {
   // Example transformation logic
   const transformedProjects = projects.map(project => ({
     name: project.project.identifier,
+    identifier: project.project.identifier,
+    harnessName: project.project.name,
     requiresTitleAndComments: false,
     // Add any additional mapping logic here
-  })).filter((element) => element.name.match(filterProject));
+  })).filter((element) =>
+    element.identifier.match(filterProject) || String(element.harnessName || '').match(filterProject)
+  );
   for (const project of transformedProjects) {
 
   const dir = `./transformedData/${project.name}`;

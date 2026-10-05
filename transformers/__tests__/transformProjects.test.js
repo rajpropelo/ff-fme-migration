@@ -48,6 +48,7 @@ describe('transformProjects', () => {
       './transformedData/test-project/transformedProject.json',
       JSON.stringify({
         name: 'test-project',
+        identifier: 'test-project',
         requiresTitleAndComments: false
       }, null, 2)
     );
@@ -56,6 +57,7 @@ describe('transformProjects', () => {
       './transformedData/another-project/transformedProject.json',
       JSON.stringify({
         name: 'another-project',
+        identifier: 'another-project',
         requiresTitleAndComments: false
       }, null, 2)
     );

@@ -31,7 +31,7 @@ async function loadTargets(filterProject) {
   const directoriesWithFlagDef = [
     ...new Set(
       getDirectoriesWithFlagDef("./transformedData").map((dir) =>
-        dir.split('/').slice(0, 3).join('/')
+        dir.split(/[/\\]/).slice(0, 3).join('/')
       )
     ),
   ].map((dir) => [dir.split('/')[0], dir.split('/')[1], dir.split('/')[2]])
